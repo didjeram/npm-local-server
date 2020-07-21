@@ -27,3 +27,6 @@ Run the service
 ```console
 docker-compose up -d
 ```
+=======
+# npm-local-server
+Create a persistence NPM Local Server with Verdaccio and Docker
