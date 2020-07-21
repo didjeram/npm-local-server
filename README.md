@@ -1,4 +1,8 @@
-# Verdaccio + Docker Compose
+# Verdaccio + Docker Compose [npm-local-server]
+
+Create a persistence NPM Local Server with Verdaccio and Docker
+
+Instructions:
 
 Create all needed folders
 
@@ -19,7 +23,7 @@ touch conf/config.yaml
 Create docker-compose.yaml
 
 ```console
-touch docker-compose.yml
+touch docker-compose.yaml
 ```
 
 Run the service
@@ -27,6 +31,16 @@ Run the service
 ```console
 docker-compose up -d
 ```
+
+Or you can run directly without docker-compose
+
+```console
+docker run -it --detach \
+    --publish 4873:4873 \
+    --volume `pwd`/conf:/verdaccio/conf \
+    --volume `pwd`/storage:/verdaccio/storage \
+    --volume `pwd`/plugins:/verdaccio/plugins \
+    --name verdaccio \
+    verdaccio/verdaccio
+```
 =======
-# npm-local-server
-Create a persistence NPM Local Server with Verdaccio and Docker
